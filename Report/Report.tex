@@ -152,6 +152,34 @@ Linear regression is an algorithm that provides a linear relationship between an
 	\item $\beta_{1},...,\beta_{k}$ are the regression coefficients for the independent variables.
 	\item $\varepsilon$ is the error term.
 \end{itemize}
+\subsection{Autoregressive Integrated Moving Average (ARIMA)}
+ARIMA is an acronym for AutoRegressive Integrated Moving Average. It is a statistical analysis model that uses time series data to either better understand the data set or to predict future trends. The full model can be written as:
+\newline \centerline{$y'_{t} = c + \phi_{1}y'_{t-1} + ... + \phi_{p}y'_{t-p} + \theta_{1}\varepsilon_{t-1} + ... + \theta_{q}\varepsilon_{t-q} + \varepsilon_{t}$}
+\newline Where:
+\begin{itemize}
+	\item $y'_{t}$ is the value of the time series at time t.
+	\item \textit{c} is the constant term.
+	\item $\phi_{1},...,\phi_{p}$ are the autoregressive coefficients.
+	\item $\theta_{1},...,\theta_{q}$ are the moving average coefficients.
+	\item $\varepsilon_{t}$ is the white noise at time \textit{t}.
+\end{itemize}
+A non - seasonal ARIMA model is classified as an ARIMA (p, d, q) model, where:
+\begin{itemize}
+	\item \textit{p} is the number of lag observations included in the model.
+	\item \textit{d} is the number of times that the raw observations are differenced.
+	\item \textit{q} is the size of the moving average window, also called the order of moving average.
+\end{itemize}
+\subsection{Autoregressive Integrated Moving Average with eXogenous factors (SARIMAX)}
+SARIMAX is an acronym for Seasonal Autoregressive Integrated Moving Average with eXogenous factors. The SARIMAX model is an improved version of the SARIMA model, with exogenous factors  (X)  as  external  feature  parameters  for  enhancing  the  model’s  performance, reducing the prediction errors, overcoming the autocorrelation issues, and improving the prediction results. The SARIMAX model consists of both seasonal effects and exogenous factors that can be used as SARIMAX (p, d, q) * (P, D, Q), while the exogenous factors are optional parameters. The exogenous factors are used to support the prediction model and to provide it with more details. The SARIMAX model can be presented as:
+\newline \centerline{$d_{t} = c + \displaystyle \sum_{n=1}^{p}\alpha_{n}d_{t-n} + \displaystyle \sum_{n=1}^{q}\theta_{n}\epsilon_{t-n} + \displaystyle \sum_{n=1}^{r}\beta_{n}x_{n_{t}}$}
+\newline \centerline{$+ \displaystyle \sum_{n=1}^{P}\phi_{n}d_{t-sn} + \displaystyle \sum_{n=1}^{Q}\eta_{n}\epsilon_{t-sn} + \epsilon_{t}$}
+\newline Where:
+\begin{itemize}
+	\item \textit{P} is seasonal autoregressive order.
+	\item \textit{D} is seasonal differencing order.
+	\item \textit{Q} is seasonal moving average order.
+	\item \textit{s} is the length of the seasonal cycle.
+\end{itemize}
 \EOD
 
 \end{document}
