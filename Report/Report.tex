@@ -180,6 +180,34 @@ SARIMAX is an acronym for Seasonal Autoregressive Integrated Moving Average with
 	\item \textit{Q} is seasonal moving average order.
 	\item \textit{s} is the length of the seasonal cycle.
 \end{itemize}
+\subsection{Random Forest}
+Random forest is an ensemble learning method for classification, regression, and other tasks, that operates by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.23\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Images/RandomForest_Img1.png}
+		\caption{The structure of Random Forest model}
+		\label{fig:1}
+	\end{minipage}
+\end{figure}
+Each tree in a random forest randomly samples subsets of the training data in a process known as bootstrap aggregating (bagging). The model is fit to these smaller data sets and the predictions are aggregated. Several instances of the same data can be used repeatedly through replacement sampling, and the result is that trees that are not only trained on different sets of data, but also different features used to make decisions.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.23\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Images/RandomForest_Img2.png}
+		\caption{Overview of Random Forest model}
+		\label{fig:1}
+	\end{minipage}
+\end{figure}
+The following steps explain the working Random Forest algorithm:
+\begin{enumerate}
+	\item Select random samples from a given data or training set.
+	\item This algorithm will construct a decision tree for every training data.
+	\item Voting will take place by averaging the decision tree.
+	\item For classification, use majority voting; for regression, use averaging to derive the final output.
+\end{enumerate}
 \EOD
 
 \end{document}
