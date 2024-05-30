@@ -54,6 +54,92 @@ Harsha Nanda Gudavalli and Khetan Venkata Ratnam Kancherla [2] identified four m
 Junyi Zhu [3] applied LR for Bitcoin price prediction with the accuracy rate for training RSS and testing RSS are 94.6\% and 96.99\% respectively.\newline
 Namrata Hemraj Gawali [4] developed predictive models to predict the price of Bitcoin using LSTM, Seasonal Autoregressive Integrated Moving Average (SARIMA), SARIMAX, and RNN. In conclusion, LSTM outperformed all other models with R Squared score of 0.9519, MAE score of 2476.68, MSE score of 10958440.29 and RMSE score of 3310.35.\newline
 Alikhan Bulatov [5] used N-BEATS trained on Bitcoin daily, hourly, and up-to-the-minute data in comparison with LSTM and ARIMA. In this analysis, it is concluded that N-BEATS is the best model for forecasting the Bitcoin price with the RMSE score in daily, hourly, and minute data are 308.859, 59.303, and 13.678 respectively.
+\section{Materials}
+\subsection{Dataset}
+This research focuses on analyzing cryptocurrency trends through three data sets of three cryptocurrencies:
+\begin{itemize}
+	\item BTC/USD
+	\item ETH/USD
+	\item BNB/USD
+\end{itemize}
+Those data sets are extracted from the website investing.com with the selected period from March 1, 2019, to March 1, 2024. 
+Each data set contains 1828 data rows and has 6 attributes:
+\begin{itemize}
+	\item Price: The last transacted price in a day.
+	\item Open: The opening price in a day.
+	\item High: The highest price in a day.
+	\item Low: The lowest price in a day.
+	\item Vol: The total amount traded in a day.
+	\item Change \%: The percentage change in the closing price compared to the previous day’s closing price.
+\end{itemize}
+\subsection{Descriptive Statistics}
+\begin{table}[H]
+	\centering
+	\caption{BTC, ETH, BNB’s Descriptive Statistics}
+	\begin{tabular}{|>{\columncolor{red!20}}c|c|c|c|}
+		\hline
+		\rowcolor{red!20} & BTC & ETH & BNB \\ \hline
+		Count & 1828 & 1828 & 1828 \\ \hline
+		Mean & 25,983.05 & 1,488.75 & 212.44\\ \hline
+		Std & 16,801.607 & 1,160.628 & 171.7707\\ \hline
+		Min & 3,715 & 107.58 & 9.28\\ \hline
+		25\% & 10,255.075 & 256.75 & 25.3325\\ \hline
+		50\% & 23,637.8 & 1,573.75 & 242.4\\ \hline
+		75\% & 38,686.75 & 2,152.043 & 318.675\\ \hline
+		Max & 67,520 & 4,808.09 & 676.12\\ \hline
+	\end{tabular}
+\end{table}
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.23\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Figure/BTC_BoxPlot.PNG}
+		\caption{Bitcoin price's boxplot}
+		\label{fig:1}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.23\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Figure/BTC_Histogram.PNG}
+		\caption{Bitcoin price's histogram}
+		\label{fig:2}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.23\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Figure/ETH_BoxPlot.PNG}
+		\caption{Ethereum price's boxplot}
+		\label{fig:1}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.23\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Figure/ETH_Histogram.PNG}
+		\caption{Ethereum price's histogram}
+		\label{fig:2}
+	\end{minipage}
+\end{figure}
+
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.23\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Figure/BNB_BoxPlot.PNG}
+		\caption{BNB price's boxplot}
+		\label{fig:1}
+	\end{minipage}
+	\hfill
+	\begin{minipage}{0.23\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Figure/BNB_Histogram.PNG}
+		\caption{BNB price's histogram}
+		\label{fig:2}
+	\end{minipage}
+\end{figure}
 \EOD
 
 \end{document}
