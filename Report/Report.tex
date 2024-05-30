@@ -241,6 +241,56 @@ In the case of a recurrent neural network, the loss function $\mathcal{L}$ of al
 \newline \centerline{$\mathcal{L}(\hat{y},y) = \displaystyle \sum_{t=1}^{T_{y}}\mathcal{L}(\hat{y}^{<t>},y^{<t>})$}
 Backpropagation is done at each point in time. At timestep \textit{T}, the derivative of the loss $\mathcal{L}$ with respect to weight matrix \textit{W} is expressed as follows:
 \newline \centerline{$\displaystyle \frac{\partial \mathcal{L}^{(T)}}{\partial W} = \displaystyle \sum_{t=1}^{T} \left. \frac{\partial \mathcal{L}^{(T)}}{\partial W} \right|_{(t)}$}
+\subsection{Gated Recurrent Unit (GRU)}
+A Gated Recurrent Unit (GRU) is a type of recurrent neural network (RNN) architecture designed to handle sequence dependencies efficiently. GRUs address some of the limitations of standard RNNs, such as the vanishing gradient problem, by incorporating gating mechanisms that regulate the flow of information. GRUs simplify the RNN architecture by using two primary gates: the reset gate and the update gate. These gates determine which information should be passed to the output and what should be retained in the hidden state.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.25\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Images/GRU_Img1.png}
+		\caption{Architecture of GRU}
+		\label{fig:1}
+	\end{minipage}
+\end{figure}
+In general, a GRU cell consists of 4 components:
+\begin{itemize}
+	\item Reset gate:
+	\newline \centerline{$r_{t} = \sigma(W_{r}x_{t} + U_{r}h_{t-1})$}
+	\newline Where:
+	\begin{itemize}
+		\item $x_{t}$ represents the current information.
+		\item $h_{t-1}$ represents the previous information.
+		\item $W_{r}$ represents how much current information is weighted.
+		\item $U_{r}$ represents how much previous information is weighted.
+	\end{itemize}
+	\item Update gate:
+	\newline \centerline{$z_{t} = \sigma(W_{z}x_{t} + U_{z}h_{t-1})$}
+	\newline Where:
+	\begin{itemize}
+		\item $x_{t}$ represents the current information.
+		\item $h_{t-1}$ represents the previous information.
+		\item $W_{z}$ represents how much current information is weighted.
+		\item $U_{z}$ represents how much previous information is weighted.
+	\end{itemize}
+	\item New memory content:
+	\newline \centerline{$h'_{t} =  tanh(W_{h}x_{t} + r_{t}.U_{h}h_{t-1})$}
+	\newline Where:
+	\begin{itemize}
+		\item $x_{t}$ represents the current information.
+		\item $h_{t-1}$ represents the previous information.
+		\item $r_{t}$ represents how much previous information should be forgotten.
+		\item $W_{h}$ represents how much current information is weighted.
+		\item $U_{h}$ represents how much previous information is weighted.
+	\end{itemize}
+	\item Final memory content:
+	\newline \centerline{$h_{t} =  z_{t}.h'_{t} + (1 - z_{t}).h_{t-1}$}
+	\newline Where:
+	\begin{itemize}
+		\item $z_{t}$ represents how much the unit updates its information with the current information.
+		\item $h_{t-1}$ represents the previous information.
+		\item $h'_{t}$ represents the current information with some degree of dependency on the previous information.
+	\end{itemize}
+\end{itemize}
 \EOD
 
 \end{document}
