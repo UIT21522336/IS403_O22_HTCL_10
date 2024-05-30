@@ -208,6 +208,39 @@ The following steps explain the working Random Forest algorithm:
 	\item Voting will take place by averaging the decision tree.
 	\item For classification, use majority voting; for regression, use averaging to derive the final output.
 \end{enumerate}
+\subsection{Recurrent Neural Network (RNN)}
+Recurrent Neural Networks (RNNs) are a class of artificial neural networks specifically designed for processing sequences of data. Unlike traditional feedforward neural networks, RNNs have cyclical connections, allowing them to maintain a memory of previous inputs.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Images/RNN_Img1.png}
+		\caption{Overview of Recurrent Neural Network}
+		\label{fig:1}
+	\end{minipage}
+\end{figure}
+For each timestep \textit{t}, the activation $a^{<t>}$ and the output $y^{<t>}$ are expressed as follows:
+\newline \centerline{$a^{<t>} = g_{1}(W_{aa}a^{<t-1>} + W_{ax}x^{<t>} + b_{a})$}
+\newline and
+\newline \centerline{$y^{<t>} = g_{2}(W_{ya}a^{<t>} +b_{y})$}
+\newline Where:
+\begin{itemize}
+	\item $W_{ax}, W_{as}, W_{ya}, b_{a}, b_{y}$ are coefficients that are shared temporally.
+	\item $g_{1}, g_{2}$ are activation functions.
+\end{itemize}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Images/RNN_Img2.png}
+		\caption{Architecture of a traditional RNN}
+		\label{fig:1}
+	\end{minipage}
+\end{figure}
+In the case of a recurrent neural network, the loss function $\mathcal{L}$ of all time steps is defined based on the loss at every time step:
+\newline \centerline{$\mathcal{L}(\hat{y},y) = \displaystyle \sum_{t=1}^{T_{y}}\mathcal{L}(\hat{y}^{<t>},y^{<t>})$}
+Backpropagation is done at each point in time. At timestep \textit{T}, the derivative of the loss $\mathcal{L}$ with respect to weight matrix \textit{W} is expressed as follows:
+\newline \centerline{$\displaystyle \frac{\partial \mathcal{L}^{(T)}}{\partial W} = \displaystyle \sum_{t=1}^{T} \left. \frac{\partial \mathcal{L}^{(T)}}{\partial W} \right|_{(t)}$}
 \EOD
 
 \end{document}
