@@ -461,6 +461,194 @@ The partial forecasts, created by individual blocks, each capture different patt
 		\caption{RF model's result with 8:2 splitting proportion}
 	\end{minipage}
 \end{figure}
+\subsection{ETH/USD Dataset}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\multicolumn{5}{|c|}{\textbf{ETH/USD Dataset's Evaluation}}\\
+		\hline
+		\centering Model & Training:Testing & RMSE & MAPE (\%) & MAE\\
+		\hline
+		\multirow{2}{*}{LR} & 7:3 & 1685.08 &  90.81 &  1634.17 \\ & 8:2 & 893.57 & 41.50 & 808.89 \\ & \textbf{9:1} & \textbf{547.36} & \textbf{15.64} & \textbf{466.42}\\
+		\hline
+		\multirow{2}{*}{ARIMA} & 7:3 & 887.16 & 24.79 & 618.80 \\ & \textbf{8:2} & \textbf{884.49}& \textbf{20.99} & \textbf{607.30} \\ & 9:1 & 1020.51 & 26.16 & 841.51\\
+		\hline
+		\multirow{2}{*}{RNN} & \textbf{7:3} & \textbf{0.01598} & \textbf{32.40} & \textbf{0.01031}\\ & 8:2& 0.02251 & 36.36 & 0.01624 \\ & 9:1 & 0.02808 & 11.25 & 0.01983\\
+		\hline
+		\multirow{2}{*}{GRU} & \textbf{7:3}	& \textbf{0.01537} & \textbf{32.37} &  \textbf{0.00959} \\ & 8:2 & 0.01863 & 37.03 & 0.01258 \\ & 9:1 & 0.02816  & 11.14 & 0.01981\\
+		\hline
+		\multirow{2}{*}{LSTM} & 7:3 &  0.02141 &  31.36 & 0.01519 \\ & \textbf{8:2} &  \textbf{0.01854} & \textbf{36.71} &  \textbf{0.01227} \\ & 9:1 & 0.02799  & 11.25 & 0.01947\\
+		\hline
+		\multirow{2}{*}{SARIMAX} & \textbf{7:3}	& \textbf{642.09} & \textbf{16.96} &  \textbf{421.99} \\ & 8:2 & 670.58 & 16.65 & 460.51 \\ & 9:1 & 938.35 &  24.06 & 773.16\\
+		\hline
+		\multirow{2}{*}{NBEATS} & \textbf{7:3} & \textbf{70.20} & \textbf{2.04} & \textbf{43.86} \\ & 8:2 & 78.08 & 2.02 & 50.42 \\ & 9:1 & 112.80	& 2.72 & 80.66 \\
+		\hline
+		\multirow{2}{*}{RF} & \textbf{7:3} & \textbf{83.18} & \textbf{2.58} & \textbf{56.61} \\ & 8:2 & 91.51 & 2.40 & 60.34 \\ & 9:1 & 123.61 & 2.84 & 87.73 \\
+		\hline
+	\end{tabular}
+	\caption{ETH/USD Dataset's Evaluation}
+	\label{ethresult}
+\end{table}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/LR_ETH_91.PNG}
+		\caption{LR model's result with 9:1 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/ARIMA_ETH_82.PNG}
+		\caption{ARIMA model's result with 8:2 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/RNN_ETH_73.PNG}
+		\caption{RNN model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/GRU_ETH_73.PNG}
+		\caption{GRU model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/LSTM_ETH_82.PNG}
+		\caption{LSTM model's result with 8:2 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/SARIMAX_ETH_73.PNG}
+		\caption{SARIMAX model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/NBEATS_ETH_73.PNG}
+		\caption{NBEATS model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/RF_ETH_73.PNG}
+		\caption{RF model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+
+
+\subsection{BNB/USD Dataset}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\multicolumn{5}{|c|}{\textbf{BNB/USD Dataset's Evaluation}}\\
+		\hline
+		\centering Model & Training:Testing & RMSE & MAPE (\%) & MAE\\
+		\hline
+		\multirow{2}{*}{LR} & 7:3 & 250.28 &  86.40 &  230.56\\ & 8:2 & 196.35 & 69.72 & 178.19 \\ & \textbf{9:1} & \textbf{131.96} & \textbf{32.73} & \textbf{124.74}\\
+		\hline
+		\multirow{2}{*}{ARIMA} & \textbf{7:3} & \textbf{116.76} & \textbf{26.33} & \textbf{86.35} \\ & 8:2 & 141.84 & 30.34 & 107.94 \\ & 9:1 & 242.19 & 38.67 & 195.64\\
+		\hline
+		\multirow{2}{*}{RNN} & \textbf{7:3} & \textbf{0.01729} & \textbf{39.94} & \textbf{0.01070}\\ & 8:2& 0.02176 & 50.54 & 0.01326 \\ & 9:1 & 0.03345 & 8.91 & 0.02328\\
+		\hline
+		\multirow{2}{*}{GRU} & \textbf{7:3}	& \textbf{0.01701} & \textbf{39.73} &  \textbf{0.01093} \\ & 8:2 & 0.01965 & 51.01 & 0.01288 \\ & 9:1 & 0.03306  & 8.86 & 0.02405\\
+		\hline
+		\multirow{2}{*}{LSTM} & \textbf{7:3} &  \textbf{0.01863} &  \textbf{40.47} & \textbf{0.01395} \\ & 8:2 &  0.02053 & 50.55 &   0.01244 \\ & 9:1 &  0.03161  & 8.90 & 0.02197\\
+		\hline
+		\multirow{2}{*}{SARIMAX} & \textbf{7:3}	& \textbf{119.44} & \textbf{37.61} &  \textbf{105.42} \\ & 8:2 & 125.43 & 35.96 & 111.44 \\ & 9:1 & 230.67 &  36.82 & 186.24\\
+		\hline
+		\multirow{2}{*}{NBEATS} & \textbf{7:3} & \textbf{11.08} & \textbf{2.01} & \textbf{6.71} \\ & 8:2 & 12.54 & 2.07 & 7.46 \\ & 9:1 & 16.54	& 2.54 & 11.15 \\
+		\hline
+		\multirow{2}{*}{RF} & \textbf{7:3} & \textbf{13.16} & \textbf{2.96} & \textbf{9.20} \\ & 8:2 & 15.06 & 3.37 & 10.62 \\ & 9:1 & 18.69 & 2.69 & 12.67 \\
+		\hline
+	\end{tabular}
+	\caption{BNB/USD Dataset's Evaluation}
+	\label{ethresult}
+\end{table}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/LR_BNB_91.PNG}
+		\caption{LR model's result with 9:1 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/ARIMA_BNB_73.PNG}
+		\caption{ARIMA model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/RNN_BNB_73.PNG}
+		\caption{RNN model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/GRU_BNB_73.PNG}
+		\caption{GRU model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/LSTM_BNB_73.PNG}
+		\caption{LSTM model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/SARIMAX_BNB_73.PNG}
+		\caption{SARIMAX model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/NBEATS_BNB_73.PNG}
+		\caption{NBEATS model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/RF_BNB_73.PNG}
+		\caption{RF model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
 \EOD
 
 \end{document}
