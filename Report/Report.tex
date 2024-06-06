@@ -10,6 +10,8 @@
 \usepackage{multirow}
 \usepackage{multicol}
 \usepackage{float}
+\usepackage{hyperref}
+\usepackage{breakurl}
 
 \def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
     T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
@@ -49,11 +51,11 @@ Cryptocurrency, price prediction, Bitcoin, Ethereum, Linear regression, ARIMA, R
 Cryptocurrency, a digital form of currency, has transformed the traditional concept of money. Unlike cash, cryptocurrencies exist purely in electronic form, utilizing encryption techniques for secure transactions. Bitcoin, the pioneering cryptocurrency introduced in 2009 by Satoshi Nakamoto, paved the way for a myriad of digital currencies that followed. The decentralized nature of cryptocurrencies means they operate without a central authority, using blockchain technology to record and verify transactions across a network of computers. This decentralization provides a level of transparency and security previously unseen in financial systems. As interest and adoption continue to grow, cryptocurrencies are reshaping the landscape of finance, offering individuals around the globe new avenues for transactions, investments, and financial freedom. \newline
 By using forecasting models and machine learning algorithms to analyze historical data of Bitcoin, Ethereum, and BNB, the research objective is to provide valuable insights for investors and traders to forecast the cryptocurrency price movement. To evaluate the performance of each predictive model, we use three metrics Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), and Root Mean Squared Error (RMSE).
 \section{Related Works}
-Mahir Iqbal and his team [1] applied a machine learning based time series analysis in predicting the price of Bitcoin. They used ARIMA, FBProphet, and XG Boosting for time series analysis and evaluated these models by using three parameters RMSE, MAE, and R Squared (R\textsuperscript{2}). After conducting the analysis, they concluded that ARIMA is the best of three with RMSE score and MAE score are 322.4 and 227.3 respectively.\newline
-Harsha Nanda Gudavalli and Khetan Venkata Ratnam Kancherla [2] identified four machine learning algorithms RF, Gradient Boosting (GB), LSTM, and GRU to make long-term predictions of cryptocurrency prices. Overall, LSTM is the most accurate model based on RMSE score of 0.01083, MSE score of 0.00011, and R Squared score of 0.80618.\newline
-Junyi Zhu [3] applied LR for Bitcoin price prediction with the accuracy rate for training RSS and testing RSS are 94.6\% and 96.99\% respectively.\newline
-Namrata Hemraj Gawali [4] developed predictive models to predict the price of Bitcoin using LSTM, Seasonal Autoregressive Integrated Moving Average (SARIMA), SARIMAX, and RNN. In conclusion, LSTM outperformed all other models with R Squared score of 0.9519, MAE score of 2476.68, MSE score of 10958440.29 and RMSE score of 3310.35.\newline
-Alikhan Bulatov [5] used N-BEATS trained on Bitcoin daily, hourly, and up-to-the-minute data in comparison with LSTM and ARIMA. In this analysis, it is concluded that N-BEATS is the best model for forecasting the Bitcoin price with the RMSE score in daily, hourly, and minute data are 308.859, 59.303, and 13.678 respectively.
+Mahir Iqbal and his team \cite{b1} applied a machine learning based time series analysis in predicting the price of Bitcoin. They used ARIMA, FBProphet, and XG Boosting for time series analysis and evaluated these models by using three parameters RMSE, MAE, and R Squared (R\textsuperscript{2}). After conducting the analysis, they concluded that ARIMA is the best of three with RMSE score and MAE score are 322.4 and 227.3 respectively.\newline
+Harsha Nanda Gudavalli and Khetan Venkata Ratnam Kancherla \cite{b2} identified four machine learning algorithms RF, Gradient Boosting (GB), LSTM, and GRU to make long-term predictions of cryptocurrency prices. Overall, LSTM is the most accurate model based on RMSE score of 0.01083, MSE score of 0.00011, and R Squared score of 0.80618.\newline
+Junyi Zhu \cite{b3} applied LR for Bitcoin price prediction with the accuracy rate for training RSS and testing RSS are 94.6\% and 96.99\% respectively.\newline
+Namrata Hemraj Gawali \cite{b4} developed predictive models to predict the price of Bitcoin using LSTM, Seasonal Autoregressive Integrated Moving Average (SARIMA), SARIMAX, and RNN. In conclusion, LSTM outperformed all other models with R Squared score of 0.9519, MAE score of 2476.68, MSE score of 10958440.29 and RMSE score of 3310.35.\newline
+Alikhan Bulatov \cite{b5} used N-BEATS trained on Bitcoin daily, hourly, and up-to-the-minute data in comparison with LSTM and ARIMA. In this analysis, it is concluded that N-BEATS is the best model for forecasting the Bitcoin price with the RMSE score in daily, hourly, and minute data are 308.859, 59.303, and 13.678 respectively.
 \section{Materials}
 \subsection{Dataset}
 This research focuses on analyzing cryptocurrency trends through three data sets of three cryptocurrencies:
@@ -339,6 +341,126 @@ These blocks have two fully connected layers in a fork architecture after a stac
 \subsubsection{Stacking blocks}
 These basic building blocks are stacked together using a technique known as “doubly residual stacking”. This method creates a hierarchical structure with residual connections across different layers, allowing for better interpretability and a more transparent network structure. Each block receives an input and generates a forecast (forward prediction) and a backcast (backward estimation).he backcast output of the previous block is subtracted from its input to create the input for the next block. This residual branch plays a key role in how the network processes the input signal. By handling the input signal step-by-step, it ensures that each block focuses on a specific part of the data, making the overall prediction more accurate and efficient.
 The partial forecasts, created by individual blocks, each capture different patterns and components of the input data. When move through the hierarchical structure, these partial forecasts are combined to form the final output. This creates a hierarchical decomposition of the forecasting process, where forecasts from the basic building blocks are combined to form the overall prediction.
+\section{Result}
+\subsection{Evaluation methods}
+\textbf{Mean Absolute Percentage  Error} (MAPE) represents the average of the absolute percentage errors of each entry in a dataset to calculate how accurate the forecasted quantities were in comparison with the actual quantities.\\
+\[ M = \frac{1}{n} \sum_{t=1}^{n} \left| \frac{A_{t} - F_{t}}{A_{t}} \right| \]
+\newline Where:
+\begin{itemize}
+	\item \textit{n} is the number of forecast values.
+	\item $A_{t}$ is the actual value of the time series at time \textit{t}.
+	\item $F_{t}$ is the forecast value at time \textit{t}.
+\end{itemize}
+\textbf{Root Mean Squared Error} (RMSE) measures the average difference between a statistical model’s predicted values and the actual values. It quantifies how dispersed these residuals are, revealing how tightly the observed data clusters around the predicted values.\\
+\[RMSE=\sqrt{\sum_{i=1}^{n} \frac{(\hat{y_i}-y_i )^2}{n} }\]\\
+\newline Where:
+\begin{itemize}
+	\item $\hat{y_1}, \hat{y_2}, ..., \hat{y_n}$ are predicted values.
+	\item ${y_1}, {y_2}, ..., {y_n}$ are observed values.
+	\item \textit{n} is the number of observations.
+\end{itemize}
+\textbf{Mean Absolute Error} (MAE) measures the average of the magnitudes of the errors between the predicted and actual values.\\
+\[MAE=\frac{1}{n}\sum_{i=1}^{n}|y_i - 
+\hat{y_i}|\]
+\newline Where:
+\begin{itemize}
+	\item \textit{n} is the number of observations.
+	\item $y_i$ is the actual value of the $i^{th}$ observation.
+	\item $\hat{y_i}$ is the predicted value of the $i^{th}$ observation.
+\end{itemize}
+\subsection{BTC/USD Dataset}
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|c|c|c|c|}
+		\hline
+		\multicolumn{5}{|c|}{\textbf{BTC/USD Dataset's Evaluation}}\\
+		\hline
+		\centering Model & Training:Testing & RMSE & MAPE (\%) & MAE\\
+		\hline
+		\multirow{2}{*}{LR} & 7:3 & 21064.65 &  74.50 &  19521.81 \\ & \textbf{8:2} & \textbf{13640.22} &  \textbf{29.98} &  \textbf{11686.03} \\ & 9:1 & 19141.51 & 25.41 & 15704.47\\
+		\hline
+		\multirow{2}{*}{ARIMA} & 7:3 & 22094.05 & 36.85 & 16069.35 \\ & \textbf{8:2} & \textbf{21759.27}& \textbf{28.62} & \textbf{15439.40} \\ & 9:1 & 21255.13 & 28.96 & 17740.84\\
+		\hline
+		\multirow{2}{*}{RNN} & \textbf{7:3}& \textbf{0.01943} & \textbf{47.51} & \textbf{0.01242}\\ & 8:2& 0.02266 & 45.52 & 0.01477 \\ & 9:1 & 0.03498 & 5.98 & 0.02810\\
+		\hline
+		\multirow{2}{*}{GRU} & \textbf{7:3}	&  \textbf{0.01705} & \textbf{48.06} & \textbf{0.01071} \\ & 8:2 & 0.02070 & 46.46 &  0.01433 \\ & 9:1 & 0.02961  & 6.09 & 0.02228\\
+		\hline
+		\multirow{2}{*}{LSTM} & \textbf{7:3} &  \textbf{0.01947} &  \textbf{48.99} & \textbf{0.01493} \\ & 8:2 &  0.02523 & 45.42 &  0.01756 \\ & 9:1 & 0.03175  & 6.08 & 0.02411\\
+		\hline
+		\multirow{2}{*}{SARIMAX} & 7:3	& 18939.08 & 29.80 & 13272.13 \\ & \textbf{8:2} & \textbf{18183.71} & \textbf{23.68} & \textbf{12728.52} \\ & 9:1 & 19199.60 & 25.88 & 15909.43\\
+		\hline
+		\multirow{2}{*}{NBEATS} & \textbf{7:3} & \textbf{1109.99} & \textbf{1.84} & \textbf{696.12} \\ & 8:2 & 1934.13 & 3.52 & 1522.24 \\ & 9:1 & 1922.36	& 2.61 & 1451.22 \\
+		\hline
+		\multirow{2}{*}{RF} & 7:3 & 2195.81 & 4.43 & 1580.86 \\ & \textbf{8:2} & \textbf{2383.56} & \textbf{2.99} & \textbf{1490.35} \\ & 9:1 & 3483.36 & 4.01 & 2515.80 \\
+		\hline
+	\end{tabular}
+	\caption{BTC/USD Dataset's Evaluation}
+	\label{btcresult}
+\end{table}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/LR_BTC_82.PNG}
+		\caption{LR model's result with 8:2 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/ARIMA_BTC_82.PNG}
+		\caption{ARIMA model's result with 8:2 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/RNN_BTC_73.PNG}
+		\caption{RNN model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/GRU_BTC_73.PNG}
+		\caption{GRU model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/LSTM_BTC_73.PNG}
+		\caption{LSTM model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/SARIMAX_BTC_82.PNG}
+		\caption{SARIMAX model's result with 8:2 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/NBEATS_BTC_73.PNG}
+		\caption{NBEATS model's result with 7:3 splitting proportion}
+	\end{minipage}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.8\linewidth}
+		\centering
+		\includegraphics[width=\linewidth]{bibliography/Images/RF_BTC_82.PNG}
+		\caption{RF model's result with 8:2 splitting proportion}
+	\end{minipage}
+\end{figure}
 \EOD
 
 \end{document}
