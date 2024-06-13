@@ -35,11 +35,11 @@
 {Author \headeretal: Hoang Nhat Minh, Le Nguyen Nhat Minh, Tran Thi Luyen}
 
 \begin{abstract}
-Predicting cryptocurrency price has become a central focus for investors and traders in the rapidly evolving landscape of digital assets. Cryptocurrencies like Bitcoin, Ethereum, and other altcoins have captured global attention, with their prices subject to fluctuations influenced by various factors, from market sentiment to technological developments. With the unprecedented volatility of these markets, the need for accurate forecasting models has never been more crucial. In this research, we conduct an in-depth analysis using various models including Linear regression (LR), Autoregressive Integrated Moving Average (ARIMA), Recurrent Neural Network (RNN), Gated Recurrent Unit (GRU), Long Short-Term Memory (LSTM), Seasonal Autoregressive Integrated Moving Average with eXogenous factors (SARIMAX), Neural Basis Expansion Analysis Time Series (NBEATS), Random Forest (RF) to predict cryptocurrency price and determine the effectiveness of each model.
+Predicting cryptocurrency price has become a central focus for investors and traders in the rapidly evolving landscape of digital assets. Cryptocurrencies like Bitcoin, Ethereum, and other altcoins have captured global attention, with their prices subject to fluctuations influenced by various factors, from market sentiment to technological developments. With the unprecedented volatility of these markets, the need for accurate forecasting models has never been more crucial. In this research, we conduct an in-depth analysis using various models including Linear regression (LR), Autoregressive Integrated Moving Average (ARIMA), Recurrent Neural Network (RNN), Gated Recurrent Unit (GRU), Long Short-Term Memory (LSTM), Seasonal Autoregressive Integrated Moving Average with eXogenous factors (SARIMAX), Neural Basis Expansion Analysis Time Series (NBEATS), Random Forest (RF) to predict prices of Bitcoin, Ethereum and BNB.
 \end{abstract}
 
 \begin{keywords}
-Cryptocurrency, price prediction, Bitcoin, Ethereum, Linear regression, ARIMA, RNN, GRU, LSTM, SARIMAX, NBEATS, RF.
+Cryptocurrency price prediction, Bitcoin, Ethereum, BNB, Linear Regression, ARIMA, RNN, GRU, LSTM, SARIMAX, NBEATS, Random Forest.
 \end{keywords}
 
 \titlepgskip=-15pt
@@ -49,7 +49,7 @@ Cryptocurrency, price prediction, Bitcoin, Ethereum, Linear regression, ARIMA, R
 \section{Introduction}
 \label{sec:introduction}
 Cryptocurrency, a digital form of currency, has transformed the traditional concept of money. Unlike cash, cryptocurrencies exist purely in electronic form, utilizing encryption techniques for secure transactions. Bitcoin, the pioneering cryptocurrency introduced in 2009 by Satoshi Nakamoto, paved the way for a myriad of digital currencies that followed. The decentralized nature of cryptocurrencies means they operate without a central authority, using blockchain technology to record and verify transactions across a network of computers. This decentralization provides a level of transparency and security previously unseen in financial systems. As interest and adoption continue to grow, cryptocurrencies are reshaping the landscape of finance, offering individuals around the globe new avenues for transactions, investments, and financial freedom. \newline
-By using forecasting models and machine learning algorithms to analyze historical data of Bitcoin, Ethereum, and BNB, the research objective is to provide valuable insights for investors and traders to forecast the cryptocurrency price movement. To evaluate the performance of each predictive model, we use three metrics Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), and Root Mean Squared Error (RMSE).
+By using forecasting models and machine learning algorithms to analyze historical data of Bitcoin, Ethereum, and BNB, the research objective is to provide valuable insights for investors and traders to forecast the cryptocurrency price movement. To evaluate the performance of each predictive model, we use three evaluation metrics Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), and Root Mean Squared Error (RMSE).
 \section{Related Works}
 Mahir Iqbal and his team \cite{b1} applied a machine learning based time series analysis in predicting the price of Bitcoin. They used ARIMA, FBProphet, and XG Boosting for time series analysis and evaluated these models by using three parameters RMSE, MAE, and R Squared (R\textsuperscript{2}). After conducting the analysis, they concluded that ARIMA is the best of three with RMSE score and MAE score are 322.4 and 227.3 respectively.\newline
 Harsha Nanda Gudavalli and Khetan Venkata Ratnam Kancherla \cite{b2} identified four machine learning algorithms RF, Gradient Boosting (GB), LSTM, and GRU to make long-term predictions of cryptocurrency prices. Overall, LSTM is the most accurate model based on RMSE score of 0.01083, MSE score of 0.00011, and R Squared score of 0.80618.\newline
@@ -155,11 +155,11 @@ Linear regression is an algorithm that provides a linear relationship between an
 	\item $\varepsilon$ is the error term.
 \end{itemize}
 \subsection{Autoregressive Integrated Moving Average (ARIMA)}
-ARIMA is an acronym for AutoRegressive Integrated Moving Average. It is a statistical analysis model that uses time series data to either better understand the data set or to predict future trends. The full model can be written as:
+ARIMA, which stands for AutoRegressive Integrated Moving Average, is a statistical analysis model designed to analyze time series data. It helps in understanding the data set more comprehensively and predicting future trends. The complete model is represented as follows:
 \newline \centerline{$y'_{t} = c + \phi_{1}y'_{t-1} + ... + \phi_{p}y'_{t-p} + \theta_{1}\varepsilon_{t-1} + ... + \theta_{q}\varepsilon_{t-q} + \varepsilon_{t}$}
 \newline Where:
 \begin{itemize}
-	\item $y'_{t}$ is the value of the time series at time t.
+	\item $y'_{t}$ is the value of the time series at time \textit{t}.
 	\item \textit{c} is the constant term.
 	\item $\phi_{1},...,\phi_{p}$ are the autoregressive coefficients.
 	\item $\theta_{1},...,\theta_{q}$ are the moving average coefficients.
@@ -172,7 +172,7 @@ A non - seasonal ARIMA model is classified as an ARIMA (p, d, q) model, where:
 	\item \textit{q} is the size of the moving average window, also called the order of moving average.
 \end{itemize}
 \subsection{Autoregressive Integrated Moving Average with eXogenous factors (SARIMAX)}
-SARIMAX is an acronym for Seasonal Autoregressive Integrated Moving Average with eXogenous factors. The SARIMAX model is an improved version of the SARIMA model, with exogenous factors  (X)  as  external  feature  parameters  for  enhancing  the  model’s  performance, reducing the prediction errors, overcoming the autocorrelation issues, and improving the prediction results. The SARIMAX model consists of both seasonal effects and exogenous factors that can be used as SARIMAX (p, d, q) * (P, D, Q), while the exogenous factors are optional parameters. The exogenous factors are used to support the prediction model and to provide it with more details. The SARIMAX model can be presented as:
+SARIMAX, which stands for Seasonal Autoregressive Integrated Moving Average with eXogenous factors, is an enhanced version of the SARIMA model, incorporating external feature parameters (X) to improve performance. By including exogenous factors, SARIMAX reduces prediction errors, addresses autocorrelation issues, and enhances prediction accuracy. The model captures both seasonal effects and exogenous factors, represented as SARIMAX (p, d, q) * (P, D, Q), with the exogenous factors being optional parameters. These factors provide additional details to support and refine the prediction model. The SARIMAX can be represented as follows:
 \newline \centerline{$d_{t} = c + \displaystyle \sum_{n=1}^{p}\alpha_{n}d_{t-n} + \displaystyle \sum_{n=1}^{q}\theta_{n}\epsilon_{t-n} + \displaystyle \sum_{n=1}^{r}\beta_{n}x_{n_{t}}$}
 \newline \centerline{$+ \displaystyle \sum_{n=1}^{P}\phi_{n}d_{t-sn} + \displaystyle \sum_{n=1}^{Q}\eta_{n}\epsilon_{t-sn} + \epsilon_{t}$}
 \newline Where:
@@ -211,7 +211,7 @@ The following steps explain the working Random Forest algorithm:
 	\item For classification, use majority voting; for regression, use averaging to derive the final output.
 \end{enumerate}
 \subsection{Recurrent Neural Network (RNN)}
-Recurrent Neural Networks (RNNs) are a class of artificial neural networks specifically designed for processing sequences of data. Unlike traditional feedforward neural networks, RNNs have cyclical connections, allowing them to maintain a memory of previous inputs.
+Recurrent Neural Networks (RNNs) are a type of artificial neural network specifically designed for processing sequential data. Unlike traditional feedforward neural networks, RNNs have cyclic connections that enable them to retain a memory of previous inputs.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{0.32\textwidth}
@@ -239,7 +239,7 @@ For each timestep \textit{t}, the activation $a^{<t>}$ and the output $y^{<t>}$ 
 		\label{fig:1}
 	\end{minipage}
 \end{figure}
-In the case of a recurrent neural network, the loss function $\mathcal{L}$ of all time steps is defined based on the loss at every time step:
+For a recurrent neural network, the loss function $\mathcal{L}$ over all time steps is defined based on the loss at each individual time step:
 \newline \centerline{$\mathcal{L}(\hat{y},y) = \displaystyle \sum_{t=1}^{T_{y}}\mathcal{L}(\hat{y}^{<t>},y^{<t>})$}
 Backpropagation is done at each point in time. At timestep \textit{T}, the derivative of the loss $\mathcal{L}$ with respect to weight matrix \textit{W} is expressed as follows:
 \newline \centerline{$\displaystyle \frac{\partial \mathcal{L}^{(T)}}{\partial W} = \displaystyle \sum_{t=1}^{T} \left. \frac{\partial \mathcal{L}^{(T)}}{\partial W} \right|_{(t)}$}
@@ -381,11 +381,11 @@ The partial forecasts, created by individual blocks, each capture different patt
 		\hline
 		\multirow{2}{*}{ARIMA} & 7:3 & 22094.05 & 36.85 & 16069.35 \\ & \textbf{8:2} & \textbf{21759.27}& \textbf{28.62} & \textbf{15439.40} \\ & 9:1 & 21255.13 & 28.96 & 17740.84\\
 		\hline
-		\multirow{2}{*}{RNN} & \textbf{7:3}& \textbf{0.01943} & \textbf{47.51} & \textbf{0.01242}\\ & 8:2& 0.02266 & 45.52 & 0.01477 \\ & 9:1 & 0.03498 & 5.98 & 0.02810\\
+		\multirow{2}{*}{RNN} & \textbf{7:3}& \textbf{1270.75} & \textbf{1.88} & \textbf{794.54}\\ & 8:2& 1483.22 & 2.26 & 1066.68 \\ & 9:1 & 2035.08 & 2.27& 1500.71\\
 		\hline
-		\multirow{2}{*}{GRU} & \textbf{7:3}	&  \textbf{0.01705} & \textbf{48.06} & \textbf{0.01071} \\ & 8:2 & 0.02070 & 46.46 &  0.01433 \\ & 9:1 & 0.02961  & 6.09 & 0.02228\\
+		\multirow{2}{*}{GRU} & \textbf{7:3}	&  \textbf{1196.24} & \textbf{2.00} & \textbf{792.37} \\ & 8:2 & 1406.63 & 1.93 &  942.98 \\ & 9:1 & 2028.07  & 2.27 & 1505.23\\
 		\hline
-		\multirow{2}{*}{LSTM} & \textbf{7:3} &  \textbf{0.01947} &  \textbf{48.99} & \textbf{0.01493} \\ & 8:2 &  0.02523 & 45.42 &  0.01756 \\ & 9:1 & 0.03175  & 6.08 & 0.02411\\
+		\multirow{2}{*}{LSTM} & \textbf{7:3} &  \textbf{1322.98} &  \textbf{2.56} & \textbf{977.10} \\ & 8:2 &  1529.33 & 2.34 &  1112.93 \\ & 9:1 & 2504.09  & 2.95 & 1967.71\\
 		\hline
 		\multirow{2}{*}{SARIMAX} & 7:3	& 18939.08 & 29.80 & 13272.13 \\ & \textbf{8:2} & \textbf{18183.71} & \textbf{23.68} & \textbf{12728.52} \\ & 9:1 & 19199.60 & 25.88 & 15909.43\\
 		\hline
@@ -399,7 +399,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{table}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/LR_BTC_82.PNG}
 		\caption{LR model's result with 8:2 splitting proportion}
@@ -407,7 +407,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/ARIMA_BTC_82.PNG}
 		\caption{ARIMA model's result with 8:2 splitting proportion}
@@ -415,7 +415,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/RNN_BTC_73.PNG}
 		\caption{RNN model's result with 7:3 splitting proportion}
@@ -423,7 +423,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/GRU_BTC_73.PNG}
 		\caption{GRU model's result with 7:3 splitting proportion}
@@ -431,7 +431,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/LSTM_BTC_73.PNG}
 		\caption{LSTM model's result with 7:3 splitting proportion}
@@ -439,7 +439,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/SARIMAX_BTC_82.PNG}
 		\caption{SARIMAX model's result with 8:2 splitting proportion}
@@ -447,7 +447,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/NBEATS_BTC_73.PNG}
 		\caption{NBEATS model's result with 7:3 splitting proportion}
@@ -455,12 +455,13 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/RF_BTC_82.PNG}
 		\caption{RF model's result with 8:2 splitting proportion}
 	\end{minipage}
 \end{figure}
+
 \subsection{ETH/USD Dataset}
 \begin{table}[H]
 	\centering
@@ -526,7 +527,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 	\centering
 	\begin{minipage}{0.8\linewidth}
 		\centering
-		\includegraphics[width=\linewidth]{bibliography/Images/LSTM_ETH_82.PNG}
+		\includegraphics[width=\linewidth]{bibliography/Images/LSTM_ETH_73.PNG}
 		\caption{LSTM model's result with 8:2 splitting proportion}
 	\end{minipage}
 \end{figure}
