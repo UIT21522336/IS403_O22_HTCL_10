@@ -52,10 +52,15 @@ Cryptocurrency, a digital form of currency, has transformed the traditional conc
 By using forecasting models and machine learning algorithms to analyze historical data of Bitcoin, Ethereum, and BNB, the research objective is to provide valuable insights for investors and traders to forecast the cryptocurrency price movement. To evaluate the performance of each predictive model, we use three evaluation metrics Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), and Root Mean Squared Error (RMSE).
 \section{Related Works}
 Mahir Iqbal and his team \cite{b1} applied a machine learning based time series analysis in predicting the price of Bitcoin. They used ARIMA, FBProphet, and XG Boosting for time series analysis and evaluated these models by using three parameters RMSE, MAE, and R Squared (R\textsuperscript{2}). After conducting the analysis, they concluded that ARIMA is the best of three with RMSE score and MAE score are 322.4 and 227.3 respectively.\newline
+
 Harsha Nanda Gudavalli and Khetan Venkata Ratnam Kancherla \cite{b2} identified four machine learning algorithms RF, Gradient Boosting (GB), LSTM, and GRU to make long-term predictions of cryptocurrency prices. Overall, LSTM is the most accurate model based on RMSE score of 0.01083, MSE score of 0.00011, and R Squared score of 0.80618.\newline
+
 Junyi Zhu \cite{b3} applied LR for Bitcoin price prediction with the accuracy rate for training RSS and testing RSS are 94.6\% and 96.99\% respectively.\newline
+
 Namrata Hemraj Gawali \cite{b4} developed predictive models to predict the price of Bitcoin using LSTM, Seasonal Autoregressive Integrated Moving Average (SARIMA), SARIMAX, and RNN. In conclusion, LSTM outperformed all other models with R Squared score of 0.9519, MAE score of 2476.68, MSE score of 10958440.29 and RMSE score of 3310.35.\newline
-Alikhan Bulatov \cite{b5} used N-BEATS trained on Bitcoin daily, hourly, and up-to-the-minute data in comparison with LSTM and ARIMA. In this analysis, it is concluded that N-BEATS is the best model for forecasting the Bitcoin price with the RMSE score in daily, hourly, and minute data are 308.859, 59.303, and 13.678 respectively.
+
+Alikhan Bulatov \cite{b5} used N-BEATS trained on Bitcoin daily, hourly, and up-to-the-minute data in comparison with LSTM and ARIMA. In this analysis, it is concluded that N-BEATS is the best model for forecasting the Bitcoin price with the RMSE score in daily, hourly, and minute data are 308.859, 59.303, and 13.678 respectively.\newline
+
 \section{Materials}
 \subsection{Dataset}
 This research focuses on analyzing cryptocurrency trends through three data sets of three cryptocurrencies:
@@ -154,6 +159,7 @@ Linear regression is an algorithm that provides a linear relationship between an
 	\item $\beta_{1},...,\beta_{k}$ are the regression coefficients for the independent variables.
 	\item $\varepsilon$ is the error term.
 \end{itemize}
+
 \subsection{Autoregressive Integrated Moving Average (ARIMA)}
 ARIMA, which stands for AutoRegressive Integrated Moving Average, is a statistical analysis model designed to analyze time series data. It helps in understanding the data set more comprehensively and predicting future trends. The complete model is represented as follows:
 \newline \centerline{$y'_{t} = c + \phi_{1}y'_{t-1} + ... + \phi_{p}y'_{t-p} + \theta_{1}\varepsilon_{t-1} + ... + \theta_{q}\varepsilon_{t-q} + \varepsilon_{t}$}
@@ -294,7 +300,7 @@ In general, a GRU cell consists of 4 components:
 	\end{itemize}
 \end{itemize}
 \subsection{Long Short-Term Memory (LSTM)}
-LSTMs Long Short-Term Memory is a type of RNNs Recurrent Neural Network that can detain long-term dependencies in sequential data. LSTMs are able to process and analyze sequential data, such as time series, text, and speech. They use a memory cell and gates to control the flow of information, allowing them to selectively retain or discard information as needed and thus avoid the vanishing gradient problem that plagues traditional RNNs.
+Long Short-Term Memory (LSTM) networks are a type of Recurrent Neural Network (RNN) designed to capture long-term dependencies in sequential data. LSTMs can process and analyze various forms of sequential data, including time series, text, and speech. They utilize a memory cell and gates to regulate the flow of information, enabling them to selectively retain or discard information as necessary. This mechanism helps them avoid the vanishing gradient problem that affects traditional RNNs.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{0.32\textwidth}
@@ -324,6 +330,7 @@ LSTM have 4 different components: cell state (memory cell), forget gate, input g
 	\newline \centerline{$o_{t} = \sigma(W_{o}.[h_{t-1},x_{t}] + b_{o})$}
 	\newline \centerline{$h_{t} = o_{t} * tanh(C_{t})$}
 \end{itemize}
+
 \subsection{Neural Basis Expansion Analysis Time Series (NBEATS)}
 Neural Basis Expansion Analysis for Time Series (NBEATS) is a deep learning architecture tailored for forecasting time series data. It diverges from traditional methods that depend on statistical techniques or basic machine learning models by employing deep neural networks to directly learn intricate temporal patterns from the data.
 \begin{figure}[H]
