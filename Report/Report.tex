@@ -64,8 +64,8 @@ This research focuses on analyzing cryptocurrency trends through three data sets
 	\item ETH/USD
 	\item BNB/USD
 \end{itemize}
-Those data sets are extracted from the website investing.com with the selected period from March 1, 2019, to March 1, 2024. 
-Each data set contains 1828 data rows and has 6 attributes:
+Those data sets are extracted from the website \textit{investing.com} with the selected period from March 1, 2019, to June 1, 2024. 
+Each data set contains 1920 data rows and has 6 attributes:
 \begin{itemize}
 	\item Price: The last transacted price in a day.
 	\item Open: The opening price in a day.
@@ -81,14 +81,14 @@ Each data set contains 1828 data rows and has 6 attributes:
 	\begin{tabular}{|>{\columncolor{red!20}}c|c|c|c|}
 		\hline
 		\rowcolor{red!20} & BTC & ETH & BNB \\ \hline
-		Count & 1828 & 1828 & 1828 \\ \hline
-		Mean & 25,983.05 & 1,488.75 & 212.44\\ \hline
-		Std & 16,801.607 & 1,160.628 & 171.7707\\ \hline
-		Min & 3,715 & 107.58 & 9.28\\ \hline
-		25\% & 10,255.075 & 256.75 & 25.3325\\ \hline
-		50\% & 23,637.8 & 1,573.75 & 242.4\\ \hline
-		75\% & 38,686.75 & 2,152.043 & 318.675\\ \hline
-		Max & 67,520 & 4,808.09 & 676.12\\ \hline
+		Count & 1920 & 1920 & 1920 \\ \hline
+		Mean & 27916.88 & 1580.30 & 229.54\\ \hline
+		Std & 17918.78 & 1205.85 & 184.43\\ \hline
+		Min & 3715 & 107.58 & 9.28\\ \hline
+		25\% & 10434.10 & 268.88 & 27.03\\ \hline
+		50\% & 25933.90 & 1622.45 & 247.55\\ \hline
+		75\% & 41492.60 & 2333.36 & 332.12\\ \hline
+		Max & 73060.80 & 4808.09 & 676.12\\ \hline
 	\end{tabular}
 \end{table}
 
@@ -96,14 +96,14 @@ Each data set contains 1828 data rows and has 6 attributes:
 	\centering
 	\begin{minipage}{0.23\textwidth}
 		\centering
-		\includegraphics[width=1\textwidth]{bibliography/Figure/BTC_BoxPlot.PNG}
+		\includegraphics[width=1\textwidth]{bibliography/Images/BoxPlot_BTC.PNG}
 		\caption{Bitcoin price's boxplot}
 		\label{fig:1}
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.23\textwidth}
 		\centering
-		\includegraphics[width=1\textwidth]{bibliography/Figure/BTC_Histogram.PNG}
+		\includegraphics[width=1\textwidth]{bibliography/Images/Histogram_BTC.PNG}
 		\caption{Bitcoin price's histogram}
 		\label{fig:2}
 	\end{minipage}
@@ -113,14 +113,14 @@ Each data set contains 1828 data rows and has 6 attributes:
 	\centering
 	\begin{minipage}{0.23\textwidth}
 		\centering
-		\includegraphics[width=1\textwidth]{bibliography/Figure/ETH_BoxPlot.PNG}
+		\includegraphics[width=1\textwidth]{bibliography/Images/BoxPlot_ETH.PNG}
 		\caption{Ethereum price's boxplot}
 		\label{fig:1}
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.23\textwidth}
 		\centering
-		\includegraphics[width=1\textwidth]{bibliography/Figure/ETH_Histogram.PNG}
+		\includegraphics[width=1\textwidth]{bibliography/Images/Histogram_ETH.PNG}
 		\caption{Ethereum price's histogram}
 		\label{fig:2}
 	\end{minipage}
@@ -130,14 +130,14 @@ Each data set contains 1828 data rows and has 6 attributes:
 	\centering
 	\begin{minipage}{0.23\textwidth}
 		\centering
-		\includegraphics[width=1\textwidth]{bibliography/Figure/BNB_BoxPlot.PNG}
+		\includegraphics[width=1\textwidth]{bibliography/Images/BoxPlot_BNB.PNG}
 		\caption{BNB price's boxplot}
 		\label{fig:1}
 	\end{minipage}
 	\hfill
 	\begin{minipage}{0.23\textwidth}
 		\centering
-		\includegraphics[width=1\textwidth]{bibliography/Figure/BNB_Histogram.PNG}
+		\includegraphics[width=1\textwidth]{bibliography/Images/Histogram_BNB.PNG}
 		\caption{BNB price's histogram}
 		\label{fig:2}
 	\end{minipage}
@@ -183,7 +183,7 @@ SARIMAX, which stands for Seasonal Autoregressive Integrated Moving Average with
 	\item \textit{s} is the length of the seasonal cycle.
 \end{itemize}
 \subsection{Random Forest}
-Random forest is an ensemble learning method for classification, regression, and other tasks, that operates by constructing a multitude of decision trees at training time and outputting the class that is the mode of the classes (classification) or mean prediction (regression) of the individual trees.
+Random forest is an ensemble learning method used for classification, regression, and various other tasks. It works by constructing numerous decision trees during training and then outputs either the mode of the classes for classification tasks or the mean prediction for regression tasks, based on the individual trees' results.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{0.23\textwidth}
@@ -193,7 +193,7 @@ Random forest is an ensemble learning method for classification, regression, and
 		\label{fig:1}
 	\end{minipage}
 \end{figure}
-Each tree in a random forest randomly samples subsets of the training data in a process known as bootstrap aggregating (bagging). The model is fit to these smaller data sets and the predictions are aggregated. Several instances of the same data can be used repeatedly through replacement sampling, and the result is that trees that are not only trained on different sets of data, but also different features used to make decisions.
+Each tree in a random forest samples subsets of the training data randomly through a process called bootstrap aggregating. The model is then fitted to these smaller data sets, and the predictions are aggregated. This method allows multiple instances of the same data to be used repeatedly through replacement sampling. As a result, the trees are trained on different sets of data and utilize different features for decision-making.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{0.23\textwidth}
@@ -205,10 +205,10 @@ Each tree in a random forest randomly samples subsets of the training data in a 
 \end{figure}
 The following steps explain the working Random Forest algorithm:
 \begin{enumerate}
-	\item Select random samples from a given data or training set.
-	\item This algorithm will construct a decision tree for every training data.
-	\item Voting will take place by averaging the decision tree.
-	\item For classification, use majority voting; for regression, use averaging to derive the final output.
+	\item From the original dataset, select random samples of data .
+	\item Train a decision tree model on each sample.
+	\item For each tree, select a random subset of features to consider at each split.
+	\item Combine the individual decision trees into a final model by taking a majority vote for classification or averaging for regression.
 \end{enumerate}
 \subsection{Recurrent Neural Network (RNN)}
 Recurrent Neural Networks (RNNs) are a type of artificial neural network specifically designed for processing sequential data. Unlike traditional feedforward neural networks, RNNs have cyclic connections that enable them to retain a memory of previous inputs.
@@ -244,7 +244,7 @@ For a recurrent neural network, the loss function $\mathcal{L}$ over all time st
 Backpropagation is done at each point in time. At timestep \textit{T}, the derivative of the loss $\mathcal{L}$ with respect to weight matrix \textit{W} is expressed as follows:
 \newline \centerline{$\displaystyle \frac{\partial \mathcal{L}^{(T)}}{\partial W} = \displaystyle \sum_{t=1}^{T} \left. \frac{\partial \mathcal{L}^{(T)}}{\partial W} \right|_{(t)}$}
 \subsection{Gated Recurrent Unit (GRU)}
-A Gated Recurrent Unit (GRU) is a type of recurrent neural network (RNN) architecture designed to handle sequence dependencies efficiently. GRUs address some of the limitations of standard RNNs, such as the vanishing gradient problem, by incorporating gating mechanisms that regulate the flow of information. GRUs simplify the RNN architecture by using two primary gates: the reset gate and the update gate. These gates determine which information should be passed to the output and what should be retained in the hidden state.
+A Gated Recurrent Unit (GRU) is a type of recurrent neural network (RNN) architecture designed to model sequential data by selectively retaining or forgetting information over time. GRUs simplify the RNN structure by utilizing two main gates: the reset gate and the update gate. The reset gate controls how much of the previous hidden state should be forgotten, while the update gate decides how much of the candidate activation vector should be integrated into the new hidden state.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{0.25\textwidth}
@@ -254,14 +254,14 @@ A Gated Recurrent Unit (GRU) is a type of recurrent neural network (RNN) archite
 		\label{fig:1}
 	\end{minipage}
 \end{figure}
-In general, a GRU cell consists of 4 components:
+A GRU cell has 4 components:
 \begin{itemize}
 	\item Reset gate:
 	\newline \centerline{$r_{t} = \sigma(W_{r}x_{t} + U_{r}h_{t-1})$}
 	\newline Where:
 	\begin{itemize}
-		\item $x_{t}$ represents the current information.
-		\item $h_{t-1}$ represents the previous information.
+		\item $x_{t}$ is the current information.
+		\item $h_{t-1}$ is the previous information.
 		\item $W_{r}$ represents how much current information is weighted.
 		\item $U_{r}$ represents how much previous information is weighted.
 	\end{itemize}
@@ -269,8 +269,8 @@ In general, a GRU cell consists of 4 components:
 	\newline \centerline{$z_{t} = \sigma(W_{z}x_{t} + U_{z}h_{t-1})$}
 	\newline Where:
 	\begin{itemize}
-		\item $x_{t}$ represents the current information.
-		\item $h_{t-1}$ represents the previous information.
+		\item $x_{t}$ is the current information.
+		\item $h_{t-1}$ is the previous information.
 		\item $W_{z}$ represents how much current information is weighted.
 		\item $U_{z}$ represents how much previous information is weighted.
 	\end{itemize}
@@ -278,8 +278,8 @@ In general, a GRU cell consists of 4 components:
 	\newline \centerline{$h'_{t} =  tanh(W_{h}x_{t} + r_{t}.U_{h}h_{t-1})$}
 	\newline Where:
 	\begin{itemize}
-		\item $x_{t}$ represents the current information.
-		\item $h_{t-1}$ represents the previous information.
+		\item $x_{t}$ is the current information.
+		\item $h_{t-1}$ is the previous information.
 		\item $r_{t}$ represents how much previous information should be forgotten.
 		\item $W_{h}$ represents how much current information is weighted.
 		\item $U_{h}$ represents how much previous information is weighted.
@@ -475,11 +475,11 @@ The partial forecasts, created by individual blocks, each capture different patt
 		\hline
 		\multirow{2}{*}{ARIMA} & 7:3 & 887.16 & 24.79 & 618.80 \\ & \textbf{8:2} & \textbf{884.49}& \textbf{20.99} & \textbf{607.30} \\ & 9:1 & 1020.51 & 26.16 & 841.51\\
 		\hline
-		\multirow{2}{*}{RNN} & \textbf{7:3} & \textbf{0.01598} & \textbf{32.40} & \textbf{0.01031}\\ & 8:2& 0.02251 & 36.36 & 0.01624 \\ & 9:1 & 0.02808 & 11.25 & 0.01983\\
+		\multirow{2}{*}{RNN} & \textbf{7:3} & \textbf{76.16} & \textbf{2.22} & \textbf{50.94}\\ & 8:2& 87.97 & 2.19 & 58.23 \\ & 9:1 & 131.16 & 2.68 & 91.03\\
 		\hline
-		\multirow{2}{*}{GRU} & \textbf{7:3}	& \textbf{0.01537} & \textbf{32.37} &  \textbf{0.00959} \\ & 8:2 & 0.01863 & 37.03 & 0.01258 \\ & 9:1 & 0.02816  & 11.14 & 0.01981\\
+		\multirow{2}{*}{GRU} & \textbf{7:3}	& \textbf{73.28} &  \textbf{1.91} &  \textbf{45.64} \\ & 8:2 & 91.22 & 2.21 & 59.68 \\ & 9:1 & 129.28  & 2.65 & 89.99\\
 		\hline
-		\multirow{2}{*}{LSTM} & 7:3 &  0.02141 &  31.36 & 0.01519 \\ & \textbf{8:2} &  \textbf{0.01854} & \textbf{36.71} &  \textbf{0.01227} \\ & 9:1 & 0.02799  & 11.25 & 0.01947\\
+		\multirow{2}{*}{LSTM} & \textbf{7:3} &  \textbf{76.83} &  \textbf{2.41} & \textbf{54.20} \\ & 8:2 &  97.20 & 2.83 &  71.16 \\ & 9:1 & 129.90  & 2.69 & 91.17\\
 		\hline
 		\multirow{2}{*}{SARIMAX} & \textbf{7:3}	& \textbf{642.09} & \textbf{16.96} &  \textbf{421.99} \\ & 8:2 & 670.58 & 16.65 & 460.51 \\ & 9:1 & 938.35 &  24.06 & 773.16\\
 		\hline
@@ -493,7 +493,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{table}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/LR_ETH_91.PNG}
 		\caption{LR model's result with 9:1 splitting proportion}
@@ -501,7 +501,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/ARIMA_ETH_82.PNG}
 		\caption{ARIMA model's result with 8:2 splitting proportion}
@@ -509,7 +509,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/RNN_ETH_73.PNG}
 		\caption{RNN model's result with 7:3 splitting proportion}
@@ -517,7 +517,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/GRU_ETH_73.PNG}
 		\caption{GRU model's result with 7:3 splitting proportion}
@@ -525,15 +525,15 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/LSTM_ETH_73.PNG}
-		\caption{LSTM model's result with 8:2 splitting proportion}
+		\caption{LSTM model's result with 7:3 splitting proportion}
 	\end{minipage}
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/SARIMAX_ETH_73.PNG}
 		\caption{SARIMAX model's result with 7:3 splitting proportion}
@@ -541,7 +541,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/NBEATS_ETH_73.PNG}
 		\caption{NBEATS model's result with 7:3 splitting proportion}
@@ -549,7 +549,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/RF_ETH_73.PNG}
 		\caption{RF model's result with 7:3 splitting proportion}
@@ -570,11 +570,11 @@ The partial forecasts, created by individual blocks, each capture different patt
 		\hline
 		\multirow{2}{*}{ARIMA} & \textbf{7:3} & \textbf{116.76} & \textbf{26.33} & \textbf{86.35} \\ & 8:2 & 141.84 & 30.34 & 107.94 \\ & 9:1 & 242.19 & 38.67 & 195.64\\
 		\hline
-		\multirow{2}{*}{RNN} & \textbf{7:3} & \textbf{0.01729} & \textbf{39.94} & \textbf{0.01070}\\ & 8:2& 0.02176 & 50.54 & 0.01326 \\ & 9:1 & 0.03345 & 8.91 & 0.02328\\
+		\multirow{2}{*}{RNN} & \textbf{7:3} & \textbf{12.51} & \textbf{2.26} & \textbf{7.91}\\ & 8:2& 15.16 & 2.43 & 9.58 \\ & 9:1 & 20.24 & 2.39 & 13.39\\
 		\hline
-		\multirow{2}{*}{GRU} & \textbf{7:3}	& \textbf{0.01701} & \textbf{39.73} &  \textbf{0.01093} \\ & 8:2 & 0.01965 & 51.01 & 0.01288 \\ & 9:1 & 0.03306  & 8.86 & 0.02405\\
+		\multirow{2}{*}{GRU} & \textbf{7:3}	& \textbf{11.22} & \textbf{1.82} &  \textbf{6.58} \\ & 8:2 & 12.84 & 1.92 & 7.51 \\ & 9:1 & 20.14  & 2.41 & 13.54\\
 		\hline
-		\multirow{2}{*}{LSTM} & \textbf{7:3} &  \textbf{0.01863} &  \textbf{40.47} & \textbf{0.01395} \\ & 8:2 &  0.02053 & 50.55 &   0.01244 \\ & 9:1 &  0.03161  & 8.90 & 0.02197\\
+		\multirow{2}{*}{LSTM} & \textbf{7:3} &  \textbf{11.78} &  \textbf{2.53} & \textbf{8.28} \\ & 8:2 &  19.81 & 3.18 & 13.40 \\ & 9:1 &  22.63  & 3.07 & 17.20\\
 		\hline
 		\multirow{2}{*}{SARIMAX} & \textbf{7:3}	& \textbf{119.44} & \textbf{37.61} &  \textbf{105.42} \\ & 8:2 & 125.43 & 35.96 & 111.44 \\ & 9:1 & 230.67 &  36.82 & 186.24\\
 		\hline
@@ -588,7 +588,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{table}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/LR_BNB_91.PNG}
 		\caption{LR model's result with 9:1 splitting proportion}
@@ -596,7 +596,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/ARIMA_BNB_73.PNG}
 		\caption{ARIMA model's result with 7:3 splitting proportion}
@@ -604,7 +604,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/RNN_BNB_73.PNG}
 		\caption{RNN model's result with 7:3 splitting proportion}
@@ -612,7 +612,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/GRU_BNB_73.PNG}
 		\caption{GRU model's result with 7:3 splitting proportion}
@@ -620,7 +620,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/LSTM_BNB_73.PNG}
 		\caption{LSTM model's result with 7:3 splitting proportion}
@@ -628,7 +628,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/SARIMAX_BNB_73.PNG}
 		\caption{SARIMAX model's result with 7:3 splitting proportion}
@@ -636,7 +636,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/NBEATS_BNB_73.PNG}
 		\caption{NBEATS model's result with 7:3 splitting proportion}
@@ -644,7 +644,7 @@ The partial forecasts, created by individual blocks, each capture different patt
 \end{figure}
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.8\linewidth}
+	\begin{minipage}{0.6\linewidth}
 		\centering
 		\includegraphics[width=\linewidth]{bibliography/Images/RF_BNB_73.PNG}
 		\caption{RF model's result with 7:3 splitting proportion}
