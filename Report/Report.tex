@@ -149,7 +149,7 @@ Each data set contains 1920 data rows and has 6 attributes:
 \end{figure}
 \section{Methodology}
 \subsection{Linear regression}
-Linear regression is an algorithm that provides a linear relationship between an independent variable and a dependent variable. A linear regression model with more than one independent variable is called a multiple linear regression model. A multiple linear regression model has the form:
+Linear regression \cite{b6} is an algorithm that provides a linear relationship between an independent variable and a dependent variable. A linear regression model with more than one independent variable is called a multiple linear regression model. A multiple linear regression model has the form:
 \newline  \centerline{$\textit{Y} = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + ... + \beta_{k}X_{k} + \varepsilon$}
 \newline Where:
 \begin{itemize}
@@ -161,7 +161,7 @@ Linear regression is an algorithm that provides a linear relationship between an
 \end{itemize}
 
 \subsection{Autoregressive Integrated Moving Average (ARIMA)}
-ARIMA, which stands for AutoRegressive Integrated Moving Average, is a statistical analysis model designed to analyze time series data. It helps in understanding the data set more comprehensively and predicting future trends. The complete model is represented as follows:
+ARIMA \cite{b7}, which stands for AutoRegressive Integrated Moving Average, is a statistical analysis model designed to analyze time series data. It helps in understanding the data set more comprehensively and predicting future trends. The complete model is represented as follows:
 \newline \centerline{$y'_{t} = c + \phi_{1}y'_{t-1} + ... + \phi_{p}y'_{t-p} + \theta_{1}\varepsilon_{t-1} + ... + \theta_{q}\varepsilon_{t-q} + \varepsilon_{t}$}
 \newline Where:
 \begin{itemize}
@@ -178,7 +178,7 @@ A non - seasonal ARIMA model is classified as an ARIMA (p, d, q) model, where:
 	\item \textit{q} is the size of the moving average window, also called the order of moving average.
 \end{itemize}
 \subsection{Autoregressive Integrated Moving Average with eXogenous factors (SARIMAX)}
-SARIMAX, which stands for Seasonal Autoregressive Integrated Moving Average with eXogenous factors, is an enhanced version of the SARIMA model, incorporating external feature parameters (X) to improve performance. By including exogenous factors, SARIMAX reduces prediction errors, addresses autocorrelation issues, and enhances prediction accuracy. The model captures both seasonal effects and exogenous factors, represented as SARIMAX (p, d, q) * (P, D, Q), with the exogenous factors being optional parameters. These factors provide additional details to support and refine the prediction model. The SARIMAX can be represented as follows:
+SARIMAX \cite{b8}, which stands for Seasonal Autoregressive Integrated Moving Average with eXogenous factors, is an enhanced version of the SARIMA model, incorporating external feature parameters (X) to improve performance. By including exogenous factors, SARIMAX reduces prediction errors, addresses autocorrelation issues, and enhances prediction accuracy. The model captures both seasonal effects and exogenous factors, represented as SARIMAX (p, d, q) * (P, D, Q), with the exogenous factors being optional parameters. These factors provide additional details to support and refine the prediction model. The SARIMAX can be represented as follows:
 \newline \centerline{$d_{t} = c + \displaystyle \sum_{n=1}^{p}\alpha_{n}d_{t-n} + \displaystyle \sum_{n=1}^{q}\theta_{n}\epsilon_{t-n} + \displaystyle \sum_{n=1}^{r}\beta_{n}x_{n_{t}}$}
 \newline \centerline{$+ \displaystyle \sum_{n=1}^{P}\phi_{n}d_{t-sn} + \displaystyle \sum_{n=1}^{Q}\eta_{n}\epsilon_{t-sn} + \epsilon_{t}$}
 \newline Where:
@@ -189,7 +189,7 @@ SARIMAX, which stands for Seasonal Autoregressive Integrated Moving Average with
 	\item \textit{s} is the length of the seasonal cycle.
 \end{itemize}
 \subsection{Random Forest}
-Random forest is an ensemble learning method used for classification, regression, and various other tasks. It works by constructing numerous decision trees during training and then outputs either the mode of the classes for classification tasks or the mean prediction for regression tasks, based on the individual trees' results.
+Random Forest \cite{b9} is an ensemble learning method used for classification, regression, and various other tasks. It works by constructing numerous decision trees during training and then outputs either the mode of the classes for classification tasks or the mean prediction for regression tasks, based on the individual trees' results.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{0.23\textwidth}
@@ -217,7 +217,7 @@ The following steps explain the working Random Forest algorithm:
 	\item Combine the individual decision trees into a final model by taking a majority vote for classification or averaging for regression.
 \end{enumerate}
 \subsection{Recurrent Neural Network (RNN)}
-Recurrent Neural Networks (RNNs) are a type of artificial neural network specifically designed for processing sequential data. Unlike traditional feedforward neural networks, RNNs have cyclic connections that enable them to retain a memory of previous inputs.
+Recurrent Neural Networks \cite{b10} (RNNs) are a type of artificial neural network specifically designed for processing sequential data. Unlike traditional feedforward neural networks, RNNs have cyclic connections that enable them to retain a memory of previous inputs.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{0.32\textwidth}
@@ -249,8 +249,39 @@ For a recurrent neural network, the loss function $\mathcal{L}$ over all time st
 \newline \centerline{$\mathcal{L}(\hat{y},y) = \displaystyle \sum_{t=1}^{T_{y}}\mathcal{L}(\hat{y}^{<t>},y^{<t>})$}
 Backpropagation is done at each point in time. At timestep \textit{T}, the derivative of the loss $\mathcal{L}$ with respect to weight matrix \textit{W} is expressed as follows:
 \newline \centerline{$\displaystyle \frac{\partial \mathcal{L}^{(T)}}{\partial W} = \displaystyle \sum_{t=1}^{T} \left. \frac{\partial \mathcal{L}^{(T)}}{\partial W} \right|_{(t)}$}
+\subsection{Long Short-Term Memory (LSTM)}
+Long Short-Term Memory \cite{b11} (LSTM) networks are a type of Recurrent Neural Network (RNN) designed to capture long-term dependencies in sequential data. LSTMs can process and analyze various forms of sequential data, including time series, text, and speech. They utilize a memory cell and gates to regulate the flow of information, enabling them to selectively retain or discard information as necessary. This mechanism helps them avoid the vanishing gradient problem that affects traditional RNNs.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Images/LSTM_Img1.jpg}
+		\caption{Architecture of LSTM}
+		\label{fig:1}
+	\end{minipage}
+\end{figure}
+LSTM have 4 different components: cell state (memory cell), forget gate, input gate, output gate.
+\begin{figure}[H]
+	\centering
+	\begin{minipage}{0.32\textwidth}
+		\centering
+		\includegraphics[width=1\textwidth]{bibliography/Images/LSTM_Img2.png}
+		\caption{LSTM components}
+		\label{fig:1}
+	\end{minipage}
+\end{figure}
+\begin{itemize}
+	\item  Forget gate: 
+	\newline \centerline{$\textit{f}_{t} = \sigma (\textit{W}_{\textit{f}}.[h_{t-1},x_{t}] + b_{\textit{f}})$}
+	\item Input gate: 
+	\newline \centerline{$i_{t} = \sigma(\textit{W}_{i}.[h_{t-1},x_{t}]+b_{i})$}
+	\newline \centerline{$\Tilde{C}_{t} = tanh(W_{C}.[h_{t-1},x_{t}] + b_{C})$}
+	\item Output gate:
+	\newline \centerline{$o_{t} = \sigma(W_{o}.[h_{t-1},x_{t}] + b_{o})$}
+	\newline \centerline{$h_{t} = o_{t} * tanh(C_{t})$}
+\end{itemize}
 \subsection{Gated Recurrent Unit (GRU)}
-A Gated Recurrent Unit (GRU) is a type of recurrent neural network (RNN) architecture designed to model sequential data by selectively retaining or forgetting information over time. GRUs simplify the RNN structure by utilizing two main gates: the reset gate and the update gate. The reset gate controls how much of the previous hidden state should be forgotten, while the update gate decides how much of the candidate activation vector should be integrated into the new hidden state.
+A Gated Recurrent Unit \cite{b12} (GRU) is a type of recurrent neural network (RNN) architecture designed to model sequential data by selectively retaining or forgetting information over time. GRUs simplify the RNN structure by utilizing two main gates: the reset gate and the update gate. The reset gate controls how much of the previous hidden state should be forgotten, while the update gate decides how much of the candidate activation vector should be integrated into the new hidden state.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{0.25\textwidth}
@@ -299,40 +330,10 @@ A GRU cell has 4 components:
 		\item $h'_{t}$ represents the current information with some degree of dependency on the previous information.
 	\end{itemize}
 \end{itemize}
-\subsection{Long Short-Term Memory (LSTM)}
-Long Short-Term Memory (LSTM) networks are a type of Recurrent Neural Network (RNN) designed to capture long-term dependencies in sequential data. LSTMs can process and analyze various forms of sequential data, including time series, text, and speech. They utilize a memory cell and gates to regulate the flow of information, enabling them to selectively retain or discard information as necessary. This mechanism helps them avoid the vanishing gradient problem that affects traditional RNNs.
-\begin{figure}[H]
-	\centering
-	\begin{minipage}{0.32\textwidth}
-		\centering
-		\includegraphics[width=1\textwidth]{bibliography/Images/LSTM_Img1.jpg}
-		\caption{Architecture of LSTM}
-		\label{fig:1}
-	\end{minipage}
-\end{figure}
-LSTM have 4 different components: cell state (memory cell), forget gate, input gate, output gate.
-\begin{figure}[H]
-	\centering
-	\begin{minipage}{0.32\textwidth}
-		\centering
-		\includegraphics[width=1\textwidth]{bibliography/Images/LSTM_Img2.png}
-		\caption{LSTM components}
-		\label{fig:1}
-	\end{minipage}
-\end{figure}
-\begin{itemize}
-	\item  Forget gate: 
-	\newline \centerline{$\textit{f}_{t} = \sigma (\textit{W}_{\textit{f}}.[h_{t-1},x_{t}] + b_{\textit{f}})$}
-	\item Input gate: 
-	\newline \centerline{$i_{t} = \sigma(\textit{W}_{i}.[h_{t-1},x_{t}]+b_{i})$}
-	\newline \centerline{$\Tilde{C}_{t} = tanh(W_{C}.[h_{t-1},x_{t}] + b_{C})$}
-	\item Output gate:
-	\newline \centerline{$o_{t} = \sigma(W_{o}.[h_{t-1},x_{t}] + b_{o})$}
-	\newline \centerline{$h_{t} = o_{t} * tanh(C_{t})$}
-\end{itemize}
+
 
 \subsection{Neural Basis Expansion Analysis Time Series (NBEATS)}
-Neural Basis Expansion Analysis for Time Series (NBEATS) is a deep learning architecture tailored for forecasting time series data. It diverges from traditional methods that depend on statistical techniques or basic machine learning models by employing deep neural networks to directly learn intricate temporal patterns from the data.
+Neural Basis Expansion Analysis for Time Series \cite{b13} (NBEATS) is a deep learning architecture tailored for forecasting time series data. It diverges from traditional methods that depend on statistical techniques or basic machine learning models by employing deep neural networks to directly learn intricate temporal patterns from the data.
 \begin{figure}[H]
 	\centering
 	\begin{minipage}{0.25\textwidth}
