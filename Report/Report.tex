@@ -187,8 +187,8 @@ SARIMAX \cite{b8}, which stands for Seasonal Autoregressive Integrated Moving Av
 	\item $X_{1,t}, X_{2,t}, ..., X_{k,t}$ are observations
 	of \textit{k} exogenous variables corresponding to the dependent variable $y_{t}$.
 \end{itemize}
-$\omega_{t}$ is a stochastic residual, which is the residual series that is independent of the input series:
-\newline  \centerline{$\omega_{t} = \dfrac{\theta_{q}(B) \; \Theta_{Q}(B^{S})}{\phi_{p}(B) \; \Phi_{P}(B^{S}) \; (1-B)^{d} \; (1-B^{S})^{D}} \; \varepsilon_{t}$}
+$\omega_{t}$ is a stochastic residual, which is the residual series that is independent of the input series: \newline
+\newline  \centerline{$\omega_{t} = \dfrac{\theta_{q}(B) \; \Theta_{Q}(B^{S})}{\phi_{p}(B) \; \Phi_{P}(B^{S}) \; (1-B)^{d} \; (1-B^{S})^{D}} \; \varepsilon_{t}$} \newline
 The above factors provide additional details to support and refine the prediction model. The SARIMAX can be represented as follows:
 \newline \centerline{$d_{t} = c + \displaystyle \sum_{n=1}^{p}\alpha_{n}d_{t-n} + \displaystyle \sum_{n=1}^{q}\theta_{n}\epsilon_{t-n} + \displaystyle \sum_{n=1}^{r}\beta_{n}x_{n_{t}}$}
 \newline \centerline{$+ \displaystyle \sum_{n=1}^{P}\phi_{n}d_{t-sn} + \displaystyle \sum_{n=1}^{Q}\eta_{n}\epsilon_{t-sn} + \epsilon_{t}$}
@@ -210,23 +210,13 @@ Random Forest \cite{b9} is an ensemble learning method used for classification, 
 		\label{fig:1}
 	\end{minipage}
 \end{figure}
-Each tree in a random forest samples subsets of the training data randomly through a process called bootstrap aggregating. The model is then fitted to these smaller data sets, and the predictions are aggregated. This method allows multiple instances of the same data to be used repeatedly through replacement sampling. As a result, the trees are trained on different sets of data and utilize different features for decision-making.
-\begin{figure}[H]
-	\centering
-	\begin{minipage}{0.23\textwidth}
-		\centering
-		\includegraphics[width=1\textwidth]{bibliography/Images/RandomForest_Img2.png}
-		\caption{Overview of Random Forest model}
-		\label{fig:1}
-	\end{minipage}
-\end{figure}
-The following steps explain the working Random Forest algorithm:
+There are two steps to build a regression tree:
 \begin{enumerate}
-	\item From the original dataset, select random samples of data .
-	\item Train a decision tree model on each sample.
-	\item For each tree, select a random subset of features to consider at each split.
-	\item Combine the individual decision trees into a final model by taking a majority vote for classification or averaging for regression.
+	\item Split the predictor space $X_{1}, X_{2}, ..., X_{p}$ into \textit{j} unique and non-overlapping regions $R_{1}, R_{2}, ..., R_{j}$
+	\item The same prediction is made for each observation in region $R_{j}$, which is the mean of the response values of the training observations in that region.
 \end{enumerate}
+By bootstrapping the entire training dataset multiple times, bagging reduces high variance and helps prevent overfitting in decision trees. With \textit{K} bootstrapped training sets, the final prediction for the point \textit{x} is calculated by averaging the predictions from all \textit{K} sets:
+\newline \centerline{$f(X) = \dfrac{1}{K}\displaystyle \sum_{k=1}^{K}T_{k}(x)$}
 \subsection{Recurrent Neural Network (RNN)}
 Recurrent Neural Networks \cite{b10} (RNNs) are a type of artificial neural network specifically designed for processing sequential data. Unlike traditional feedforward neural networks, RNNs have cyclic connections that enable them to retain a memory of previous inputs.
 \begin{figure}[H]
@@ -712,7 +702,7 @@ We would like to express our sincere gratitude to \textbf{Assoc. Prof. Dr. Nguye
 	F.~R.~Alharbi and D.~Csala, ``A Seasonal Autoregressive Integrated Moving Average with Exogenous Factors (SARIMAX) Forecasting Model-Based Time Series Approach,'' 16 Oct. 2022.
 	
 	\bibitem{b9}
-	Learn AI, ``Random Forest Algorithm,'' 14 Jan. 2023. [Online]. Available: \url{https://medium.com/@divakar1591/random-forest-algorithm-772d3e5568af}
+	H. Wu, Y. Cai, Y. Wu, R. Zhong, Q. Li, J. Zheng, D. Lin, Y. Li, ``Time series analysis of weekly influenza-like illness rate using a one-year period of factors in random forest regression,'' 18 Apr. 2017. [Online]. Available: \url{https://www.jstage.jst.go.jp/article/bst/11/3/11_2017.01035/_pdf/-char/ja}
 	
 	\bibitem{b10}
 	A.~Amidi and S.~Amidi, ``Recurrent Neural Networks Cheatsheet,'' [Online]. Available: \url{https://stanford.edu/~shervine/teaching/cs-230/cheatsheet-recurrent-neural-networks?fbclid=IwAR369BvCjGFZ3Ag0x_muwXsbboSIPrHdZd87f_6R4OZGPj_1O7mMFGk3eP0}
