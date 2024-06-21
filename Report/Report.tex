@@ -51,15 +51,15 @@ Cryptocurrency price prediction, Bitcoin, Ethereum, BNB, Linear Regression, ARIM
 Cryptocurrency, a digital form of currency, has transformed the traditional concept of money. Unlike cash, cryptocurrencies exist purely in electronic form, utilizing encryption techniques for secure transactions. Bitcoin, the pioneering cryptocurrency introduced in 2009 by Satoshi Nakamoto, paved the way for a myriad of digital currencies that followed. The decentralized nature of cryptocurrencies means they operate without a central authority, using blockchain technology to record and verify transactions across a network of computers. This decentralization provides a level of transparency and security previously unseen in financial systems. As interest and adoption continue to grow, cryptocurrencies are reshaping the landscape of finance, offering individuals around the globe new avenues for transactions, investments, and financial freedom. \newline
 By using forecasting models and machine learning algorithms to analyze historical data of Bitcoin, Ethereum, and BNB, the research objective is to provide valuable insights for investors and traders to forecast the cryptocurrency price movement. To evaluate the performance of each predictive model, we use three evaluation metrics Mean Absolute Error (MAE), Mean Absolute Percentage Error (MAPE), and Root Mean Squared Error (RMSE).
 \section{Related Works}
-Mahir Iqbal and his team \cite{b1} applied a machine learning based time series analysis in predicting the price of Bitcoin. They used ARIMA, FBProphet, and XG Boosting for time series analysis and evaluated these models by using three parameters RMSE, MAE, and R Squared (R\textsuperscript{2}). After conducting the analysis, they concluded that ARIMA is the best of three with RMSE score and MAE score are 322.4 and 227.3 respectively.\newline
+Mahir Iqbal and his team \cite{b1} applied a machine learning based time series analysis in predicting the price of Bitcoin. They used ARIMA, FBProphet, and XG Boosting for time series analysis and evaluated these models by using three parameters RMSE, MAE, and R Squared (R\textsuperscript{2}). After conducting the analysis, they concluded that ARIMA is the best of three with RMSE score and MAE score are 322.4 and 227.3 respectively.
 
-Harsha Nanda Gudavalli and Khetan Venkata Ratnam Kancherla \cite{b2} identified four machine learning algorithms RF, Gradient Boosting (GB), LSTM, and GRU to make long-term predictions of cryptocurrency prices. Overall, LSTM is the most accurate model based on RMSE score of 0.01083, MSE score of 0.00011, and R Squared score of 0.80618.\newline
+Harsha Nanda Gudavalli and Khetan Venkata Ratnam Kancherla \cite{b2} identified four machine learning algorithms RF, Gradient Boosting (GB), LSTM, and GRU to make long-term predictions of cryptocurrency prices. Overall, LSTM is the most accurate model based on RMSE score of 0.01083, MSE score of 0.00011, and R Squared score of 0.80618.
 
-Junyi Zhu \cite{b3} applied LR for Bitcoin price prediction with the accuracy rate for training RSS and testing RSS are 94.6\% and 96.99\% respectively.\newline
+Junyi Zhu \cite{b3} applied LR for Bitcoin price prediction with the accuracy rate for training RSS and testing RSS are 94.6\% and 96.99\% respectively.
 
-Namrata Hemraj Gawali \cite{b4} developed predictive models to predict the price of Bitcoin using LSTM, Seasonal Autoregressive Integrated Moving Average (SARIMA), SARIMAX, and RNN. In conclusion, LSTM outperformed all other models with R Squared score of 0.9519, MAE score of 2476.68, MSE score of 10958440.29 and RMSE score of 3310.35.\newline
+Namrata Hemraj Gawali \cite{b4} developed predictive models to predict the price of Bitcoin using LSTM, Seasonal Autoregressive Integrated Moving Average (SARIMA), SARIMAX, and RNN. In conclusion, LSTM outperformed all other models with R Squared score of 0.9519, MAE score of 2476.68, MSE score of 10958440.29 and RMSE score of 3310.35.
 
-Alikhan Bulatov \cite{b5} used N-BEATS trained on Bitcoin daily, hourly, and up-to-the-minute data in comparison with LSTM and ARIMA. In this analysis, it is concluded that N-BEATS is the best model for forecasting the Bitcoin price with the RMSE score in daily, hourly, and minute data are 308.859, 59.303, and 13.678 respectively.\newline
+Alikhan Bulatov \cite{b5} used N-BEATS trained on Bitcoin daily, hourly, and up-to-the-minute data in comparison with LSTM and ARIMA. In this analysis, it is concluded that N-BEATS is the best model for forecasting the Bitcoin price with the RMSE score in daily, hourly, and minute data are 308.859, 59.303, and 13.678 respectively.
 
 \section{Materials}
 \subsection{Dataset}
@@ -178,7 +178,18 @@ A non - seasonal ARIMA model is classified as an ARIMA (p, d, q) model, where:
 	\item \textit{q} is the size of the moving average window, also called the order of moving average.
 \end{itemize}
 \subsection{Autoregressive Integrated Moving Average with eXogenous factors (SARIMAX)}
-SARIMAX \cite{b8}, which stands for Seasonal Autoregressive Integrated Moving Average with eXogenous factors, is an enhanced version of the SARIMA model, incorporating external feature parameters (X) to improve performance. By including exogenous factors, SARIMAX reduces prediction errors, addresses autocorrelation issues, and enhances prediction accuracy. The model captures both seasonal effects and exogenous factors, represented as SARIMAX (p, d, q) * (P, D, Q), with the exogenous factors being optional parameters. These factors provide additional details to support and refine the prediction model. The SARIMAX can be represented as follows:
+SARIMAX \cite{b8}, which stands for Seasonal Autoregressive Integrated Moving Average with eXogenous factors, is an enhanced version of the SARIMA model, incorporating external feature parameters (X) to improve performance. By including exogenous factors, SARIMAX reduces prediction errors, addresses autocorrelation issues, and enhances prediction accuracy. The model captures both seasonal effects and exogenous factors, represented as SARIMAX (p, d, q) * (P, D, Q), where X is the vector of exogenous variables. The exogenous variables can be represented using a multiple linear regression equation, as shown below:
+\newline  \centerline{$y_{t} = \beta_{0} + \beta_{1}X_{1,t} + \beta_{2}X_{2,t} + ... + \beta_{k}X_{k,t} + \omega_{t}$}
+\newline Where:
+\begin{itemize}
+	\item $\beta_{0}$ is a constant parameter.
+	\item $\beta_{1}, \beta_{2}, ..., \beta_{k}$ are regression coefficient parameters of exogenous variables.
+	\item $X_{1,t}, X_{2,t}, ..., X_{k,t}$ are observations
+	of \textit{k} exogenous variables corresponding to the dependent variable $y_{t}$.
+\end{itemize}
+$\omega_{t}$ is a stochastic residual, which is the residual series that is independent of the input series:
+\newline  \centerline{$\omega_{t} = \dfrac{\theta_{q}(B) \; \Theta_{Q}(B^{S})}{\phi_{p}(B) \; \Phi_{P}(B^{S}) \; (1-B)^{d} \; (1-B^{S})^{D}} \; \varepsilon_{t}$}
+The above factors provide additional details to support and refine the prediction model. The SARIMAX can be represented as follows:
 \newline \centerline{$d_{t} = c + \displaystyle \sum_{n=1}^{p}\alpha_{n}d_{t-n} + \displaystyle \sum_{n=1}^{q}\theta_{n}\epsilon_{t-n} + \displaystyle \sum_{n=1}^{r}\beta_{n}x_{n_{t}}$}
 \newline \centerline{$+ \displaystyle \sum_{n=1}^{P}\phi_{n}d_{t-sn} + \displaystyle \sum_{n=1}^{Q}\eta_{n}\epsilon_{t-sn} + \epsilon_{t}$}
 \newline Where:
@@ -336,7 +347,7 @@ A GRU cell has 4 components:
 Neural Basis Expansion Analysis for Time Series \cite{b13} (NBEATS) is a deep learning architecture designed specifically for forecasting time series data. It uses deep neural networks to directly learn complex temporal patterns from the data.
 \begin{figure}[H]
 	\centering
-	\begin{minipage}{0.25\textwidth}
+	\begin{minipage}{0.40\textwidth}
 		\centering
 		\includegraphics[width=1\textwidth]{bibliography/Images/NBEATS_Img1.png}
 		\caption{Architecture of NBEATS}
