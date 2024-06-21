@@ -15,6 +15,7 @@
   - Week 6: Viết báo cáo phần Result (Evaluation methods, BTC/USD dataset).
   - Week 7: Chỉnh sửa báo cáo phần Abstract, Introduction, ARIMA, SARIMAX, RNN, Result (Evaluation methods, BTC/USD dataset). Chỉnh sửa thuật toán RNN.
   - Week 8: Chỉnh sửa báo cáo phần Result(BTC/USD dataset). Chỉnh sửa thuật toán RNN.
+  - Week 9: Chỉnh sửa báo cáo phần SARIMAX.
 - **Lê Nguyễn Nhật Minh**
   - Week 2: Viết báo cáo phần Related Works.
   - Week 3: Viết báo cáo phần Linear Regression. Code thuật toán Linear Regression.
@@ -29,3 +30,4 @@
   - Week 6: Viết báo cáo phần Result (ETH/USD dataset, BNB/USD dataset).
   - Week 7: Chỉnh sửa báo cáo phần Materials, Random Forest, GRU, Result (ETH/USD dataset, BNB/USD dataset).
   - Week 8: Chỉnh sửa báo cáo phần Result (ETH/USD dataset, BNB/USD dataset). Chỉnh sửa thuật toán Random Forest, GRU.
+  - Week 9: Chỉnh sửa báo cáo phần Random Forest.
